@@ -1,11 +1,8 @@
 #include "LineSegment.h"
 #include <iostream>
 
-LineSegment::LineSegment(Point p1, Point p2){
-
-    this->p1 = p1;
-    this->p2 = p2;
-}
+LineSegment::LineSegment(Point p1, Point p2)
+ : p1(p1), p2(p2) {}
 
 double LineSegment::Slope(){
 

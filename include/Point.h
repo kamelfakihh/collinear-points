@@ -8,6 +8,7 @@ class Point {
 public:
 
     Point();
+    // Point(const Point &P);
     Point(double x, double y);
 
     // returns the slope between this point and point P

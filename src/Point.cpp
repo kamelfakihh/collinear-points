@@ -2,17 +2,14 @@
 #include <iostream>
 #include <iomanip>
 
-Point::Point(double x, double y){
+Point::Point(double x, double y) 
+ : x(x), y(y) {}
 
-    this->x = x;
-    this->y = y;
-}
+Point::Point() 
+ : x(0.0), y(0.0) {}
 
-Point::Point(){
-
-    this->x = 0.0;
-    this->y = 0.0;
-}
+// Point::Point(const Point &P) 
+//  : x(P.x), y(P.y) {}
 
 double Point::slopeTo(Point P){
 
