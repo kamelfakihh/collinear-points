@@ -62,12 +62,13 @@ bool Point::operator!=(Point P){
 
 std::ostream &operator<<(std::ostream &output, Point &P){
 
-    output << std::setprecision(3) << "(" << P.x << "," << P.y << ")";
+    output << std::setprecision(3) << "(" << P.x << ", " << P.y << ")";
     return output;
 }
 
 std::istream &operator>>(std::istream &input, Point &P){
 
+    std::cout << "enter point coordinates (space seperated) : ";
     input >> P.x >> P.y;
     return input;
 }

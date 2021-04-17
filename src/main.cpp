@@ -1,4 +1,5 @@
 #include "Point.h"
+#include "LineSegment.h"
 #include <iostream>
 
 int main(){
@@ -12,8 +13,6 @@ int main(){
     std::cout << p1 << std::endl;
     std::cout << p2 << std::endl;
 
-    std::cout << "slope : " << p1.slopeTo(p2) << std::endl;
-
     if(p1 > p2){
         std::cout << "p1 > p2" << std::endl;
     }else if(p1 < p2){
@@ -22,4 +21,8 @@ int main(){
         std::cout << "p1 = p2" << std::endl;
     }
 
+    LineSegment S1 = LineSegment(p1, p2);
+
+    std::cout << S1 << std::endl;
+    std::cout << "slope : " << S1.Slope() << std::endl;
 }

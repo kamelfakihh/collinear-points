@@ -22,7 +22,7 @@ public:
     // outputs this point coordinates
     friend std::ostream &operator<<(std::ostream &output, Point &P);
     // inputs a new points coordinates
-    friend std::istream &operator>>(std::istream &output, Point &P);
+    friend std::istream &operator>>(std::istream &input, Point &P);
 
     // operator overloading using compareTo() method
     bool operator>(Point P);
