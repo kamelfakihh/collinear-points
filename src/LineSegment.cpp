@@ -9,6 +9,11 @@ double LineSegment::Slope(){
     return p1.slopeTo(p2);
 }
 
+bool LineSegment::operator<(LineSegment L){
+
+    return this->Slope() < L.Slope();
+}
+
 std::ostream &operator<<(std::ostream &output, LineSegment &S){
 
     output << S.p1 << " -> " << S.p2;
