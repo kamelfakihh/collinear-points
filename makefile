@@ -19,8 +19,12 @@ TARGET = program.exe
 
 SRC = $(wildcard src/*.cpp)
 OBJECTS  = $(SRC:src/%.cpp=$(OBJ_DIR)/%.o)
-DEPENDENCIES := $(OBJECTS:.o=.d) 						\
-
+DEPENDENCIES := $(OBJECTS:.o=.d) 																			\
+				Sort.cpp : Sort.cpp Sort.h																	\
+				Point.cpp : Point.cpp Point.h																\
+				LineSegment.cpp : LineSegment.cpp LineSegment.h												\
+				CollinearPoints.cpp : CollinearPoints.cpp CollinearPoints.h LineSegment.h Point.h Sort.h	\
+				main.cpp : main.cpp Point.h LineSegment.h CollinearPoints.h
 
 all: build $(BIN_DIR)/$(TARGET)
 
