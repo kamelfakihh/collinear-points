@@ -14,7 +14,7 @@ template<typename item>
 bool isSorted(item *content, int l_index, int r_index);
 
 template<typename item>
-void exchange(item *it1, item *it2);
+void exchange(item *content, int it1, int it2);
 
 template<typename item>
 bool less(item it1, item it2);

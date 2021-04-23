@@ -5,10 +5,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <list>
-
-#define n 100
 
 int main(){
 
@@ -37,12 +34,6 @@ int main(){
     }else{
         std::cout << "failed to open file!" << std::endl;
     }
-
-
-    // for(std::list<LineSegment>::iterator it = segments.begin(); it != segments.end(), ++it){
-    //     std::cout << it << std::endl;
-    // }
-
 
     return 0;
 }
