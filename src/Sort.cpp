@@ -1,9 +1,5 @@
 #include "Sort.h"
 
-
-
-#include <iostream>
-
 template<typename item>
 bool less(item it1, item it2){
 
@@ -11,11 +7,11 @@ bool less(item it1, item it2){
 }
 
 template<typename item>
-void exchange(item *it1, item *it2){
+void exchange(item *content, int it1, int it2){
 
-    item temp = *it1;
-    *it1 = *it2;
-    *it2 = temp;
+    item temp = content[it1];
+    content[it1] = content[it2];
+    content[it2] = temp;
 }
 
 template<typename item>
@@ -56,12 +52,12 @@ void merge(item *content, item *aux, int l, int m, int r){
         } else if(j>r){
             content[k] = aux[i];
             i++;
-        } else if( less(aux[i], aux[j]) ){
-            content[k] = aux[i];
-            i++;
-        } else {
+        } else if( less(aux[j], aux[i]) ){
             content[k] = aux[j];
             j++;
+        } else {
+            content[k] = aux[i];
+            i++;
         }
     }
 }
@@ -79,7 +75,3 @@ void mergeSort(item *content, item *aux, int l, int r){
     if( less(content[m], content[m+1]) ) return;
     merge(content, aux, l, m, r);
 }
-
-
-
-
