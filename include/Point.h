@@ -20,6 +20,9 @@ public:
     // returns -1,0,1 for smaller, equal and larger respectively 
     int compareTo(Point P);
 
+    double getX();
+    double getY();
+
     // outputs this point coordinates
     friend std::ostream &operator<<(std::ostream &output, Point &P);
     // inputs a new points coordinates

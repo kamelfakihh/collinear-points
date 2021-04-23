@@ -16,6 +16,14 @@ double Point::slopeTo(Point P){
     return (this->y - P.y) / (this->x - P.x);
 }
 
+double Point::getX(){
+    return x;
+}
+
+double Point::getY(){
+    return y;
+}
+
 int Point::compareTo(Point P){
 
     // check if one of the points has a higher y-coordinate
