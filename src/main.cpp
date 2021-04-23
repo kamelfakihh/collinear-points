@@ -1,28 +1,48 @@
 #include "Point.h"
 #include "LineSegment.h"
+#include "CollinearPoints.h"
+#include "Sort.h"
+
 #include <iostream>
+#include <fstream>
+#include <vector>
+#include <list>
+
+#define n 100
 
 int main(){
 
-    Point p1;
-    Point p2;
+    std::ifstream input("input.txt", std::ios::in);
+    std::list<LineSegment> segments{};
+    Point* points;
+    double x,y;
+    int nb, i=0;;
 
-    std::cin >> p1;
-    std::cin >> p2;
+    if(input.is_open()){
 
-    std::cout << p1 << std::endl;
-    std::cout << p2 << std::endl;
+        input >> nb;
+        points = new Point[nb];
 
-    if(p1 > p2){
-        std::cout << "p1 > p2" << std::endl;
-    }else if(p1 < p2){
-        std::cout << "p1 < p2" << std::endl;
+        while(input >> x >> y){
+            points[i] = Point(x,y);
+            i++;
+        }
+
+        FastCollinearPoints(points, segments, nb);
+
+        for (auto &item : segments) {
+            std::cout << item << std::endl;
+        }
+
     }else{
-        std::cout << "p1 = p2" << std::endl;
+        std::cout << "failed to open file!" << std::endl;
     }
 
-    LineSegment S1 = LineSegment(p1, p2);
 
-    std::cout << S1 << std::endl;
-    std::cout << "slope : " << S1.Slope() << std::endl;
+    // for(std::list<LineSegment>::iterator it = segments.begin(); it != segments.end(), ++it){
+    //     std::cout << it << std::endl;
+    // }
+
+
+    return 0;
 }
